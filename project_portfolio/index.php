@@ -1,0 +1,615 @@
+<?php include_once 'header.php'; ?>
+
+	<main id="main">
+		<!-- 인트로 -->
+		<div class="main-intro-wr h100-center hgt__100vh" style="display: none;">
+			<div class="top-tx-wr">
+				<p class="tx-style01">LEE HAE JI <br> PORTFOLIO
+				</p>
+			</div>
+			<div class="main-title-wr fill-text">
+				<span class="base-text">웹의 가치를 새롭게 만듭니다.</span>
+				<span class="top-text">웹의 가치를 새롭게 만듭니다.</span>
+			</div>
+			<div class="bt-tx-wr">
+				<p class="tx-style01">SEOUL, KR</p>
+				<p class="tx-style01 mt08">hjlee0714@gmail.com</p>		
+			</div>
+		</div>
+
+		<canvas id="canvas"></canvas>
+		<script src="js/threejs.js"></script>
+		<div class="fixed-scroll-bottom">
+			<p class="tx-style01">SCROLL</p>
+			<p class="scroll-line-wr"><span class="active-line"></span></p>
+		</div>
+
+		<header class="header">
+			<div class="inner__cen1600">
+				<nav class="main__mnav__wr">
+					<a href="#main-contents-wr00">HOME</a>
+					<a href="#main-contents-wr01">ABOUT</a>
+					<a href="#main-contents-wr02">WORK</a>
+					<a href="#main-contents-wr03">STACK</a>
+					<a href="#main-contents-wr04">CONTACT</a>
+				</nav>
+			</div>
+		</header>
+		
+
+		<!-- 비주얼 -->
+		<section class="main-content-wr h100-center hgt__100vh" id="main-contents-wr00" data-scroll>
+			<div class="inner__cen1600">
+				<div class="main-intro-title-wr">
+					<h1 class="title tx__ani01" data-splitting>Who</h1>
+					<h1 class="title tx__ani01" data-splitting>I Am</h1>
+					<div class="tx-wr hidden768">
+						<div class="hidden-tx"><p class="text">웹 표준과 접근성을 준수하며, 어떤 환경에서도 결함 없는 사용자 경험을</p></div>
+						<div class="hidden-tx"><p class="text">제공하는 견고한 인터페이스를 구축합니다. 5년의 실무 경험을 통해</p></div>
+						<div class="hidden-tx"><p class="text">구조화된 마크업과 유지보수가 용이한 CSS 설계를 지향하며,</p></div>
+						<div class="hidden-tx"><p class="text">단순한 구현을 넘어 브라우저 성능과 최적화까지 고려한 인터페이스를 만듭니다.</p></div>
+					</div>
+					
+					<div class="tx-wr visible768">
+						<div class="hidden-tx"><p class="text">웹 표준과 접근성을 준수하며, 어떤 환경에서도</p></div>
+						<div class="hidden-tx"><p class="text">결함 없는 사용자 경험을 제공하는 견고한 인터페이스를 구축합니다.</p></div>
+						<div class="hidden-tx"><p class="text">5년의 실무 경험을 통해 구조화된 마크업과 유지보수가 용이한</p></div>
+						<div class="hidden-tx"><p class="text">CSS 설계를 지향하며, 단순한 구현을 넘어 브라우저 성능과 </p></div>
+						<div class="hidden-tx"><p class="text">최적화까지 고려한 인터페이스를 만듭니다. 단순한 구현을 넘어</p></div>
+						<div class="hidden-tx"><p class="text">브라우저 성능과 최적화까지 고려한 인터페이스를 만듭니다.</p></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<style>
+			#main-contents-wr01 .main-title-wr .tx01{opacity:0; position:relative; top:30px;}
+			#main-contents-wr01 .img-wr{opacity:0; position:relative; top:30px;}
+			.main-title-wr .tit{opacity:0; position:relative; top:30px;}
+			.main-title-wr .title{opacity:0; position:relative; top:30px;}
+			
+			
+			#main-contents-wr01 .flex-wr[data-scroll="in"] .main-title-wr .tx01{opacity:1; top:0; transition:all 0.8s ease; transition-delay:0.25s;}
+			#main-contents-wr01 .flex-wr[data-scroll="in"] .img-wr{opacity:1; top:0; transition:all 0.8s ease; transition-delay:0.25s;}
+			
+			
+			.main-content-wr[data-scroll="in"] .main-title-wr .tit{opacity:1; top:0; transition:all 0.8s ease; transition-delay:0.2s;}
+			.main-content-wr[data-scroll="in"] .main-title-wr .title{opacity:1; top:0; transition:all 0.8s ease; transition-delay:0.3s;}
+			
+			
+			.main-content-wr .project-li-wr[data-scroll="in"] .project-explan-wr{opacity:1; top:0;}
+			
+			.main-content-wr .project-li-wr .project-explan-wr{transition: all 0.8s ease; opacity:0; position:relative; top:30px; transition-delay:0.35s;}
+				
+			.main-content-wr .project-li-wr .project-img { transition: all 0.8s ease; transition-delay: 0.25s; }
+			.main-content-wr .project-li-wr:nth-child(odd) .project-img { opacity: 0; transform: translateX(-30px); }
+			.main-content-wr .project-li-wr:nth-child(even) .project-img { opacity: 0; transform: translateX(30px); }
+			.main-content-wr .project-li-wr[data-scroll="in"] .project-img { opacity: 1; transform: translateX(0); }
+
+		</style>
+		
+		
+		<!-- section01 -->
+		<section class="main-content-wr main-contents-wr01 h100-center hgt__100vh" id="main-contents-wr01" data-scroll>
+			<div class="inner__cen1600">
+				<div class="flex-wr" data-scroll>
+					<div class="main-title-wr">
+						<p class="tit">01 / WHO I AM</p>
+						<div class="img-wr visible1024"><img src="images/leehaeji.jpg" alt="이혜지"></div>
+						<p class="tx01 mt30">웹 개발자 / 프로젝트 리더 이혜지<br>5년 차의 실무 노하우로 설계부터 구현, 완성도 높은 결과물까지 책임집니다.<br><br>
+						안녕하세요, 개발자 이혜지입니다.<br>
+						웹 에이전시에서 5년간 대규모 웹 시스템 구축 및 운영 프로젝트를<br class="visible570"> 다수 완수해 왔습니다.<br class="hidden570">
+						단순 UI/UX 퍼블리싱을 넘어<br class="visible570"> 요구사항 분석, 마크업 구조 설계, CMS 커스터마이징까지<br>
+						프로젝트 전 주기를 주도적으로 리드해 온 경험을 보유하고 있습니다.<br><br>
+						이러한 노하우를 바탕으로 귀사의 프로젝트가 기획 의도에 맞게<br>
+						정확하고 안정적으로 구현될 수 있도록 지원하겠습니다.<br><br>
+						기술적 성취감과 성과를 향한 집요함으로 고객사의 비즈니스 목표를 이해하고,<br>
+						기대 이상의 완성도 높은 웹 서비스를 제공하겠습니다.
+						</p>
+					</div>
+					<div class="img-wr hidden1024"><img src="images/leehaeji.jpg" alt="이혜지"></div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="main-content-wr main-contents-wr02" id="main-contents-wr02" data-scroll>
+			<div class="inner__cen1600">
+				<div class="main-title-wr">
+					<p class="tit">02 / Selected Works</p>
+				</div>
+				<div class="main-contents-box main-contents-box01">
+					<ul>
+						<li class="project-li-wr" data-scroll>
+							<a href="./project/project01.php" class="project-li">
+								<div class="project-img img-wr"><img src="images/lnk_img.jpg" alt="이낙근찹쌀떡"></div>
+								<div class="project-explan-wr">
+									<p class="tit01"><span class="number">01</span>Store Build <span>ㅣ</span>Food</p>
+									<p class="subject">이낙근찹쌀떡</p>
+									<p class="tx01">Responsive Web / CAFE24</p>
+									<p class="main-btn"><span class="hover-line"></span>VIEW MORE</p>
+								</div>
+							</a>
+						</li>
+						<li class="project-li-wr" data-scroll>
+							<a href="./project/project02.php" class="project-li reverse">
+								<div class="project-img img-wr"><img src="images/silkn_img.jpg" alt="실큰코리아"></div>
+								<div class="project-explan-wr">
+									<p class="tit01"><span class="number">02</span>Store Build <span>ㅣ</span>Beauty</p>
+									<p class="subject">SILK'N</p>
+									<p class="tx01">Responsive Web / CAFE24</p>
+									<p class="main-btn"><span class="hover-line"></span>VIEW MORE</p>
+								</div>
+							</a>
+						</li>
+
+						<li class="project-li-wr" data-scroll>
+							<a href="./project/project03.php" class="project-li">
+								<div class="project-img img-wr"><img src="images/skin1004_img.jpg" alt="스킨천사"></div>
+								<div class="project-explan-wr">
+									<p class="tit01"><span class="number">03</span>Web Renewal <span>ㅣ</span>Beauty</p>
+									<p class="subject">SKIN1004</p>
+									<p class="tx01">Responsive Web / CAFE24</p>
+									<p class="main-btn"><span class="hover-line"></span>VIEW MORE</p>
+								</div>
+							</a>
+						</li>
+						
+						<li class="project-li-wr" data-scroll>
+							<a href="./project/project04.php" class="project-li reverse">
+								<div class="project-img img-wr"><img src="images/lamy_img.jpg" alt="lamy"></div>
+								<div class="project-explan-wr">
+									<p class="tit01"><span class="number">04</span>Web Renewal <span>ㅣ</span>Stationery</p>
+									<p class="subject">LAMY</p>
+									<p class="tx01">Responsive Web / CAFE24</p>
+									<p class="main-btn"><span class="hover-line"></span>VIEW MORE</p>
+								</div>
+							</a>
+						</li>
+						
+						<li class="project-li-wr" data-scroll>
+							<a href="./project/project05.php" class="project-li">
+								<div class="project-img img-wr"><img src="images/drdifferent_img.jpg" alt="drdifferent"></div>
+								<div class="project-explan-wr">
+									<p class="tit01"><span class="number">05</span>Web Renewal <span>ㅣ</span>Beauty</p>
+									<p class="subject">DR.DIFFERENT</p>
+									<p class="tx01">Responsive Web / CAFE24</p>
+									<p class="main-btn"><span class="hover-line"></span>VIEW MORE</p>
+								</div>
+							</a>
+						</li>
+						
+						<li class="project-li-wr" data-scroll>
+							<a href="./project/project06.php" class="project-li reverse">
+								<div class="project-img img-wr"><img src="images/liaisondeloren_img.jpg" alt="liaisondeloren"></div>
+								<div class="project-explan-wr">
+									<p class="tit01"><span class="number">06</span>Web Renewal <span>ㅣ</span>Beauty</p>
+									<p class="subject">liaisondeloren</p>
+									<p class="tx01">Responsive Web / CAFE24</p>
+									<p class="main-btn"><span class="hover-line"></span>VIEW MORE</p>
+								</div>
+							</a>
+						</li>
+						<li class="project-li-wr" data-scroll>
+							<a href="./project/project07.php" class="project-li">
+								<div class="project-img img-wr"><img src="images/sungboon_img.jpg" alt="성분에디터"></div>
+								<div class="project-explan-wr">
+									<p class="tit01"><span class="number">07</span>Web Renewal <span>ㅣ</span>Beauty</p>
+									<p class="subject">성분에디터</p>
+									<p class="tx01">Responsive Web / CAFE24</p>
+									<p class="main-btn"><span class="hover-line"></span>VIEW MORE</p>
+								</div>
+							</a>
+						</li>
+						
+						<li class="project-li-wr" data-scroll>
+							<a href="./project/project08.php" class="project-li reverse">
+								<div class="project-img img-wr"><img src="images/zwilling_img.jpg" alt="zwilling"></div>
+								<div class="project-explan-wr">
+									<p class="tit01"><span class="number">08</span>Web Renewal <span>ㅣ</span>Living</p>
+									<p class="subject">zwilling</p>
+									<p class="tx01">Responsive Web / CAFE24</p>
+									<p class="main-btn"><span class="hover-line"></span>VIEW MORE</p>
+								</div>
+							</a>
+						</li>
+						
+						<li class="project-li-wr" data-scroll>
+							<a href="./project/project09.php" class="project-li">
+								<div class="project-img img-wr"><img src="images/keiman_img.jpg" alt="케이만"></div>
+								<div class="project-explan-wr">
+									<p class="tit01"><span class="number">07</span>Web Renewal <span>ㅣ</span>Living</p>
+									<p class="subject">KEIMAN</p>
+									<p class="tx01">Responsive Web / CAFE24</p>
+									<p class="main-btn"><span class="hover-line"></span>VIEW MORE</p>
+								</div>
+							</a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</section>
+		<style>
+			
+			.main-contents-wr03 .stack-li-wr{transition: all 0.8s ease; opacity:0; position:relative; top:30px;}
+			.main-contents-wr03[data-scroll="in"] .stack-li-wr{opacity:1; top:0; transition-delay: 0.3s;}
+			
+			.main-contents-wr04 .ft-emailform-box{opacity:0; top:30px; transition-delay: 0.3s; transition: all 0.8s ease; position:relative;}
+			.main-contents-wr04 .ft-emailform-box[data-scroll="in"]{ opacity:1; top:0; transition-delay: 0.25s;}
+			
+			
+		</style>
+		<section class="main-content-wr main-contents-wr03" id="main-contents-wr03" data-scroll>
+			<div class="inner__cen1600">
+				<div class="main-title-wr">
+					<p class="tit">03 / STACK</p>
+				</div>
+				<div class="main-contents-box main-contents-box01">
+					<ul class="stack-li-wr">
+						<li class="stack-li">
+							<h4 class="tit">Core Publishing</h4>
+							<div class="stack-group-wr">
+								<p class="tx">HTML5</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+							<div class="stack-group-wr">
+								<p class="tx">CSS3</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+							<div class="stack-group-wr">
+								<p class="tx">JavaScript (ES6+)</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+						</li>
+						<li class="stack-li">
+							<h4 class="tit">Interaction 3D</h4>
+							<div class="stack-group-wr">
+								<p class="tx">GSAP Interaction</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+							<div class="stack-group-wr">
+								<p class="tx">Three.js (3D Object)</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class=""></span>
+								</div>
+							</div>
+							<div class="stack-group-wr">
+								<p class="tx">WebGL Implementation</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class=""></span>
+								</div>
+							</div>
+						</li>
+						<li class="stack-li">
+							<h4 class="tit">Design Tools</h4>
+							<div class="stack-group-wr">
+								<p class="tx">Figma</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+							<div class="stack-group-wr">
+								<p class="tx">Adobe XD</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+							<div class="stack-group-wr">
+								<p class="tx">Photoshop / Illustrator</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+						</li>
+
+						<li class="stack-li">
+							<h4 class="tit">Standard Quality</h4>
+							<div class="stack-group-wr">
+								<p class="tx">Web Accessibility</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+							<div class="stack-group-wr">
+								<p class="tx">Web Standards</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+							<div class="stack-group-wr">
+								<p class="tx">Responsive Web</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+							<div class="stack-group-wr">
+								<p class="tx">Cross Browsing</p>
+								<div class="stack-group">
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+									<span class="white"></span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		
+		<section class="main-content-wr main-contents-wr04" id="main-contents-wr04" data-scroll>
+			<div class="inner__cen1600">
+				<div class="main-title-wr talign__center">
+					<p class="tit mb30">04 / CONTACT</p>
+					<h1 class="title">Let's Build<br> Something Great<br> Together.</h1>
+				</div>
+				
+				<!-- modify this form HTML and place wherever you want your form -->
+				<div class="ft-emailform-box" data-scroll>
+					<form id="my-form" action="https://formspree.io/f/mnpqyykv" method="POST">
+						<div class="flex-box-wr">
+							<div class="flex-box">
+								<!-- 1. 이름 -->
+								<label for="name">이름 <span>*</span></label>
+								<input type="text" id="name" name="name" required placeholder="홍길동">
+							 </div>
+						 
+						 
+							<div class="flex-box">
+								<!-- 2. 회사 -->
+								<label for="company">회사/브랜드 <span>*</span></label>
+								<input type="text" id="company" name="company" placeholder="회사명/브랜드">
+							 </div>
+						</div>
+						<div class="flex-box-wr">
+							<!-- 3. 이메일 -->
+							<div class="flex-box">
+								<label for="email">이메일 주소 <span>*</span></label>
+								<input type="email" id="email" name="email" required placeholder="you@email.com">
+							</div>
+
+							<!-- 4. 예산 -->
+							<div class="flex-box">
+								<label for="budget">예산 범위 <span>*</span></label>
+								<select id="budget" name="budget">
+								  <option value="">예산을 선택해주세요</option>
+								  <option value="300만원 미만">300만원 미만</option>
+								  <option value="300만원 ~ 500만원">300만원 ~ 500만원</option>
+								  <option value="500만원 ~ 1,000만원">500만원 ~ 1,000만원</option>
+								  <option value="1,000만원 이상">1,000만원 이상</option>
+								  <option value="협의 필요">협의 필요</option>
+								</select>
+							</div>
+						</div>
+						<div class="flex-box-wr">
+							<!-- 5. 완료 희망일정 -->
+							<div class="flex-box">
+								<label for="deadline">완료 희망일정 <span>*</span></label>
+								<input type="text" id="deadline" name="deadline" placeholder="예: 2027년 1월 말 / 미정">
+							</div>
+
+							<!-- 6. 참고사이트 -->
+							<div class="flex-box">
+								<label for="reference">참고사이트 (URL) <span>*</span></label>
+								<input type="url" id="reference" name="reference" placeholder="https://example.com">
+							</div>
+						</div>
+						<!-- 7. 프로젝트 내용 -->
+						<div class="">
+							<label for="message">프로젝트 내용 <span>*</span></label>
+							<textarea id="message" name="message" required placeholder="구상 중이신 프로젝트에 대해 자세히 작성해 주세요."></textarea>
+						</div>
+						
+
+						<!-- 제출 버튼 -->
+						<div class="talign__center">
+							<button type="submit" class="hover-slide-right" id="submit-btn">
+								<span>메세지 보내기 <img src="images/icon_arrow.png" alt="arrow"></span>
+							</button>
+						</div>
+					</form>
+				</div>
+				
+				<!-- 모달 팝업 HTML 구조 -->
+				<div id="modal-overlay" class="modal-overlay">
+					<div class="modal-content">
+						<div id="modal-icon" class="modal-icon"></div>
+						<p id="modal-status" class="modal-message"></p>
+						<button type="button" id="modal-close-btn" class="modal-btn">확인</button>
+					</div>
+				</div>
+
+
+				<!-- 3. JavaScript 영역 (동일 - FormData가 7개 항목을 자동으로 수집함) -->
+				<script>
+				  document.addEventListener("DOMContentLoaded", function () {
+					const form = document.getElementById("my-form");
+					const submitBtn = document.getElementById("submit-btn");
+
+					const modalOverlay = document.getElementById("modal-overlay");
+					const modalStatus = document.getElementById("modal-status");
+					const modalIcon = document.getElementById("modal-icon");
+					const modalCloseBtn = document.getElementById("modal-close-btn");
+
+					if (!form) return;
+
+					function showModal(message, isSuccess = true) {
+					  modalStatus.innerText = message;
+					  modalIcon.innerText = isSuccess ? "✅" : "❌";
+					  modalOverlay.classList.add("active");
+					}
+
+					function closeModal() {
+					  modalOverlay.classList.remove("active");
+					}
+
+					modalCloseBtn.addEventListener("click", closeModal);
+
+					modalOverlay.addEventListener("click", function (e) {
+					  if (e.target === modalOverlay) {
+						closeModal();
+					  }
+					});
+
+					form.addEventListener("submit", async function (event) {
+					  event.preventDefault();
+
+					  submitBtn.disabled = true;
+					  submitBtn.innerText = "Sending...";
+
+					  // FormData 객체가 form 안의 모든 name 속성을 가진 입력 요소(7개)를 알아서 다 묶어줍니다.
+					  const data = new FormData(form);
+
+					  try {
+						const response = await fetch(form.action, {
+						  method: form.method,
+						  body: data,
+						  headers: {
+							'Accept': 'application/json'
+						  }
+						});
+
+						if (response.ok) {
+						  showModal("문의가 성공적으로 전송되었습니다!\n확인 후 빠르게 연락드리겠습니다.", true);
+						  form.reset();
+						} else {
+						  const result = await response.json();
+						  if (Object.hasOwn(result, 'errors')) {
+							showModal(result.errors.map(error => error["message"]).join(", "), false);
+						  } else {
+							showModal("전송 중 문제가 발생했습니다. 다시 시도해주세요.", false);
+						  }
+						}
+					  } catch (error) {
+						showModal("네트워크 오류가 발생했습니다. 인터넷 연결을 확인해주세요.", false);
+					  } finally {
+						submitBtn.disabled = false;
+						submitBtn.innerText = "Send";
+					  }
+					});
+				  });
+				</script>
+				
+			</div>
+		</section>
+		<style>
+			.main-bt-wr .flex-wr{display:flex; width:90%; margin:0 auto;}
+			.main-bt-wr .flex-wr h1{opacity:0; transform:translateY(30%); transition:all 0.8s ease;}
+			.main-bt-wr[data-scroll="in"] .flex-wr h1{opacity:1; transform:translateY(0%);}
+			
+			.main-bt-wr[data-scroll="in"] .flex-wr h1:nth-child(1){transition-delay:0.2s;}
+			.main-bt-wr[data-scroll="in"] .flex-wr h1:nth-child(2){transition-delay:0.25s;}
+			.main-bt-wr[data-scroll="in"] .flex-wr h1:nth-child(3){transition-delay:0.3s;}
+			.main-bt-wr[data-scroll="in"] .flex-wr h1:nth-child(4){transition-delay:0.35s;}
+			.main-bt-wr[data-scroll="in"] .flex-wr h1:nth-child(5){transition-delay:0.4s;}
+			.main-bt-wr[data-scroll="in"] .flex-wr h1:nth-child(6){transition-delay:0.45s;}
+			.main-bt-wr[data-scroll="in"] .flex-wr h1:nth-child(7){transition-delay:0.5s;}
+			.main-bt-wr[data-scroll="in"] .flex-wr h1:nth-child(8){transition-delay:0.55s;}
+			
+		</style>
+		<div class="main-bt-wr" id="main-bt-wr" data-scroll>
+			<div class="flex-wr">
+				<h1 class="">T</h1>
+				<h1 class="">H</h1>
+				<h1 class="">A</h1>
+				<h1 class="">N</h1>
+				<h1 class="">K</h1>
+				<h1 class="">Y</h1>
+				<h1 class="">O</h1>
+				<h1 class="">U</h1>
+			</div>
+		</div>
+	</main>
+	
+	<script>
+		$(document).ready(function() {
+			if (sessionStorage.getItem('mainIntroSeen')) {
+				document.body.classList.add('no-intro');
+			} else {
+				$('.main-intro-wr').addClass('is-ready');
+			}
+		});
+	</script>
+
+	<script>
+		$(function(){
+			ScrollOut({once: 'true',});
+			Splitting();
+		});
+		
+		$(window).on('scroll', function() {
+			var scTop = $(this).scrollTop();
+			var winHeight = $(this).height();
+			// 바닥 감지 오차 방지를 위해 document.body.scrollHeight 직접 참조
+			var docHeight = document.documentElement.scrollHeight || $(document).height();
+
+			// 5px 정도의 여유 유격(Threshold)을 두어 소수점 오차 완벽 해결
+			if (scTop + winHeight >= docHeight - 5) {
+				$(".fixed-scroll-bottom").addClass('on');
+			} else {
+				$(".fixed-scroll-bottom").removeClass('on');
+			}
+		});
+
+
+	</script>
+	
+	<?php include_once 'footer.php'; ?>
+	
